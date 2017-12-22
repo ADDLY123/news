@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=0">  
+	<title>闪屏</title>
+	<link rel="stylesheet" href="css/shanping.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<script src="js/rem.js"></script>
+</head>
+<body id="mysp">
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+        	<img src="img/lunbo1.png" alt="">
+        </div>
+        <div class="swiper-slide">
+        	<img src="img/lunbo2.png" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/lunbo1.png" alt="">
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+</div>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/swiper.min.js"></script>
+<script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    autoplay: true,
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    on: {
+    slideChangeTransitionEnd: function(){
+      if(this.activeIndex==2){
+        setTimeout(function(){
+          location.href = "index.html";
+        },2000);
+        
+      }
+     //切换结束时，告诉我现在是第几个slide
+    },
+  },
+  })        
+  </script>
